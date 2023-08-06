@@ -32,18 +32,17 @@ const EventClient = ({ data }: EventClientProps) => {
 
             <DataTable columns={columns} data={data} searchKey='title' />
 
-            <div className='flex flex-col gap-y-4'>
+            <div className='flex flex-col gap-y-4 mb-8'>
 
                 <Heading title="Add Custom Description" description="Choose an event and add custom description for the event" />
                 <Separator />
 
                 {data.map((item) => (
-                    <div key={item.id} className='flex justify-between items-center gap-y-4'>
+                    <div key={item.id} className='flex justify-between items-center gap-y-4 '>
                         {item.title}
                         
                             <Button onClick={() => router.push(`/events/${item.id}/custom_description/viewAll`)}><Eye className='mr-2 h-4 w-4'/> View</Button>
-                      
-
+                    
                     </div>
 
 

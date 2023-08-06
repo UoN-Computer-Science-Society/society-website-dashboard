@@ -1,47 +1,50 @@
 import React from 'react'
 import prismadb from '@/lib/prismadb'
 import format from 'date-fns/format'
-import { SubscriptionColumn } from './components/column'
-import SubscriptionClient from './components/client'
+import { NoticeBoardColumn } from './components/column'
 import Link from 'next/link'
 import { Link2 } from 'lucide-react'
 import Heading from '@/components/ui/heading'
 import { Separator } from '@/components/ui/separator'
 import Inquiry from '@/components/inquiry'
+import NoticeBoardClient from './components/client'
 
-const SubscriptionPage = async () => {
+const PositionsPage = async () => {
 
-    const emailSubcription = await prismadb.emailSubcription.findMany({
+    const positions = await prismadb.noticeBoard.findMany({
         orderBy: {
             createdAt: 'desc'
         }
     })
 
-    const formattedSubscription: SubscriptionColumn[] = emailSubcription.map((item) => ({
+    const formattedNoticeBoards: NoticeBoardColumn[] = positions.map((item) => ({
         id: item.id,
-        name: item.name,
-        email: item.email,
+        title: item.title,
+        description: item.description,
+        buttonText: item.buttonText,
+        link: item.link,
+        isArchived: item.isArchived,
         createdAt: format(item.createdAt, "MMMM do, yyyy")
     }))
 
     return (
         <div className='flex-col'>
             <div className='flex-1 space-y-4 p-8 pt-6'>
-                <SubscriptionClient data={formattedSubscription} />
+                <NoticeBoardClient data={formattedNoticeBoards} />
 
                 <Heading title={'Additional resources'} description={''} />
                 <Separator />
 
                 <div className='py-3 flex-col gap-3'>
-                    <h1 className='mb-4'>Below is the link to the contact-us section in the webpage</h1>
+                    <h1 className='mb-4'>Below is the link to the noticeBoard section in the webpage</h1>
 
-                    <Link href={`${process.env.WEBSITE_URL}/contact-us`} target='blank'>
+                    <Link href={`${process.env.WEBSITE_URL}`} target='blank'>
                         <div className='flex gap-3  my-4'>
-                            <Link2 />{process.env.WEBSITE_URL}/contact-us
+                            <Link2 />{process.env.WEBSITE_URL}
                         </div>
                     </Link>
 
-
+                   
                     <Inquiry />
                 </div>
             </div>
@@ -50,4 +53,4 @@ const SubscriptionPage = async () => {
     )
 }
 
-export default SubscriptionPage
+export default PositionsPage

@@ -19,6 +19,11 @@ export function MainNav({
 
     const routes = [
         {
+            href: `/noticeboards`,
+            label: 'NoticeBoard',
+            active: pathname === `/noticeboards`,
+        },
+        {
             href: `/committees`,
             label: 'Committee',
             active: pathname === `/committees`,

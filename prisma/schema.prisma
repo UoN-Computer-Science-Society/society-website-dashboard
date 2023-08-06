@@ -101,3 +101,13 @@ model EmailSubcription {
   email     String
   createdAt DateTime @default(now())
 }
+
+model NoticeBoard {
+  id          String   @id @default(uuid())
+  title       String
+  description String
+  buttonText  String
+  link        String
+  isArchived  Boolean
+  createdAt   DateTime @default(now())
+}
