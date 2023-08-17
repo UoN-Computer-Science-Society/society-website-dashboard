@@ -41,7 +41,7 @@ const SubscriptionClient = ({ data }: SubscriptionClientProps) => {
 
             <Separator />
 
-            <DataTable columns={columns} data={data} searchKey='name' />
+            <DataTable columns={columns} data={data} searchKey='email' />
 
         </>
     )

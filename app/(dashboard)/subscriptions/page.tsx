@@ -19,7 +19,6 @@ const SubscriptionPage = async () => {
 
     const formattedSubscription: SubscriptionColumn[] = emailSubcription.map((item) => ({
         id: item.id,
-        name: item.name,
         email: item.email,
         createdAt: format(item.createdAt, "MMMM do, yyyy")
     }))

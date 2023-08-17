@@ -7,16 +7,11 @@ import CellAction from "./cell-actions";
 // You can use a Zod schema here if you want.
 export type SubscriptionColumn = {
     id: string;
-    name: string;
     email: string;
     createdAt: string;
 }
 
 export const columns: ColumnDef<SubscriptionColumn>[] = [
-    {
-        accessorKey: "name",
-        header: "Name",
-    },
     {
         accessorKey: "email",
         header: "Email",

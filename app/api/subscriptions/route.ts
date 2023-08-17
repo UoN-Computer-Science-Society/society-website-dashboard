@@ -13,11 +13,7 @@ export async function POST(req: Request) {
 
         const body = await req.json();
 
-        const { email, name } = body;
-
-        if (!name) {
-            return new NextResponse("Name is required", { status: 400 });
-        }
+        const { email} = body;
 
         if (!email) {
             return new NextResponse("Email is required", { status: 400 });
@@ -25,7 +21,6 @@ export async function POST(req: Request) {
 
         const emailSubcription = await prismadb.emailSubcription.create({
             data: {
-                name,
                 email,
             }
         })
