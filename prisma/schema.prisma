@@ -110,3 +110,18 @@ model NoticeBoard {
   isArchived  Boolean
   createdAt   DateTime @default(now())
 }
+
+model Faq {
+  id        String   @id @default(uuid())
+  question  String
+  answer    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Partner {
+  id        String   @id @default(uuid())
+  name      String
+  imageUrl  String
+  createdAt DateTime @default(now())
+}

@@ -42,12 +42,28 @@ const ImageUpload = ({ disabled, onChange, onRemove, value }: ImageUploadProps) 
                                 <Trash className="h-4 w-4" />
                             </Button>
                         </div>
-                        <Image
+                        {/* <Image
                             fill
                             className="object-cover"
                             alt="image"
                             src={url}
-                        />
+                        /> */}
+                        <div className="w-auto h-[200px]">
+                            <div className="object-contain w-full h-full flex justify-center items-center p-2">
+                                <Image
+                                    src={url}
+                                    alt="Image"
+                                    sizes="100vw"
+                                    style={{
+                                        width: '100%',
+                                        height: 'auto',
+                                    }}
+                                    width={500}
+                                    height={300}
+                                    className='self-center'
+                                />
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>

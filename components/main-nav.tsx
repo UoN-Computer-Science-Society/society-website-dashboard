@@ -44,6 +44,16 @@ export function MainNav({
             active: pathname === `/blogs`,
         },
         {
+            href: `/partners`,
+            label: 'Partners',
+            active: pathname === `/partners`,
+        },
+        {
+            href: `/faqs`,
+            label: 'Faq',
+            active: pathname === `/faqs`,
+        },
+        {
             href: `/subscriptions`,
             label: 'Subscription',
             active: pathname === `/subscriptions`,

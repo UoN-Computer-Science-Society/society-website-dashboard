@@ -9,15 +9,15 @@ import { Separator } from '@/components/ui/separator'
 import Inquiry from '@/components/inquiry'
 import NoticeBoardClient from './components/client'
 
-const PositionsPage = async () => {
+const NoticeBoardsPage = async () => {
 
-    const positions = await prismadb.noticeBoard.findMany({
+    const NoticeBoards = await prismadb.noticeBoard.findMany({
         orderBy: {
             createdAt: 'desc'
         }
     })
 
-    const formattedNoticeBoards: NoticeBoardColumn[] = positions.map((item) => ({
+    const formattedNoticeBoards: NoticeBoardColumn[] = NoticeBoards.map((item) => ({
         id: item.id,
         title: item.title,
         description: item.description,
@@ -53,4 +53,4 @@ const PositionsPage = async () => {
     )
 }
 
-export default PositionsPage
+export default NoticeBoardsPage
