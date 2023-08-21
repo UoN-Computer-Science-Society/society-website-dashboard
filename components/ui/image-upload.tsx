@@ -67,8 +67,8 @@ const ImageUpload = ({ disabled, onChange, onRemove, value }: ImageUploadProps) 
                     </div>
                 ))}
             </div>
-            {/*!!! need to change the upload preset when transfer the account to unm-css !!!*/}
-            <CldUploadWidget onUpload={onUpload} uploadPreset="xnywrv5b">
+
+            <CldUploadWidget onUpload={onUpload} uploadPreset= {process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET}>
                 {({ open }) => {
                     const onClick = () => {
                         open();
