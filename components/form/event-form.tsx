@@ -46,9 +46,9 @@ const EventForm = ({ initialData }: EventFormProps) => {
     const params = useParams();
     const router = useRouter();
 
-    const title = initialData ? "Edit Event" : "Add Event";
-    const description = initialData ? "Edit a Event" : "Add a Event";
-    const toastMessage = initialData ? "Event updated" : "Event created";
+    const title = initialData ? "Edit UpcomingEvent" : "Add UpcomingEvent";
+    const description = initialData ? "Edit a UpcomingEvent" : "Add a UpcomingEvent";
+    const toastMessage = initialData ? "UpcomingEvent updated" : "UpcomingEvent created";
     const action = initialData ? "Save Changes" : "Create";
 
 

@@ -21,8 +21,8 @@ const BlogClient = ({ data }: BlogClientProps) => {
             <div className='flex items-center justify-between '>
 
                 <Heading
-                    title={`Blog (${data.length})`}
-                    description='Manage Blogs' />
+                    title={`Previous Event (${data.length})`}
+                    description='Manage Previous Event' />
                 <Button onClick={() => router.push(`/blogs/new`)}>
                     <Plus className='mr-2 h-4 w-4' />
                     Add

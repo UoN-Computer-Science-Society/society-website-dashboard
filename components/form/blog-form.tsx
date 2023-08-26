@@ -51,9 +51,9 @@ const BlogForm = ({ initialData }: BlogFormProps) => {
     const params = useParams();
     const router = useRouter();
 
-    const title = initialData ? "Edit Blog" : "Add Blog";
-    const description = initialData ? "Edit a Blog" : "Add a Blog";
-    const toastMessage = initialData ? "Blog updated" : "Blog created";
+    const title = initialData ? "Edit Previous Event" : "Add Previous Event";
+    const description = initialData ? "Edit a Previous Event" : "Add a Previous Event";
+    const toastMessage = initialData ? "Previous Event updated" : "Previous Event created";
     const action = initialData ? "Save Changes" : "Create";
 
 
@@ -100,7 +100,7 @@ const BlogForm = ({ initialData }: BlogFormProps) => {
             router.push(`/blogs`)
             toast.success("blog Deleted");
         } catch (error) {
-            toast.error("Make sure to removed all product using this blog first");
+            toast.error("Make sure to removed all event using this blog first");
         } finally {
             setLoading(false);
             setOpen(false);

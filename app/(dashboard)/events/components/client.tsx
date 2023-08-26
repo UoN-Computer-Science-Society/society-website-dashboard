@@ -21,8 +21,8 @@ const EventClient = ({ data }: EventClientProps) => {
             <div className='flex items-center justify-between '>
 
                 <Heading
-                    title={`Event (${data.length})`}
-                    description='Manage Events' />
+                    title={`Upcoming Event (${data.length})`}
+                    description='Manage Upcoming Events' />
                 <Button onClick={() => router.push(`/events/new`)}>
                     <Plus className='mr-2 h-4 w-4' />
                     Add
@@ -34,7 +34,7 @@ const EventClient = ({ data }: EventClientProps) => {
 
             <div className='flex flex-col gap-y-4 mb-8'>
 
-                <Heading title="Add Custom Description" description="Choose an event and add custom description for the event" />
+                <Heading title="Add Custom Description" description="Choose an upcoming event and add custom description for the event" />
                 <Separator />
 
                 {data.map((item) => (
