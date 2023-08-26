@@ -33,14 +33,16 @@ export function MainNav({
             label: 'Position Open',
             active: pathname === `/positions`,
         },
+         //events represent upcoming event, just naming different
         {
             href: `/events`,
-            label: 'Events',
+            label: 'Upcoming Events',
             active: pathname === `/events`,
         },
+        //blogs represent previous event, just naming different
         {
             href: `/blogs`,
-            label: 'Blogs',
+            label: 'Previous Event',
             active: pathname === `/blogs`,
         },
         {
